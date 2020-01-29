@@ -55,7 +55,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>(); //initialize the list
 
-                if (!Bun) instructions.Add("hold bread");     // if item is set to false, add hold item to the list
+                if (!Bun) instructions.Add("hold bun");     // if item is set to false, add hold item to the list
                 if (!Ketchup) instructions.Add("hold ketchup");
                 if (!Mustard) instructions.Add("hold mustard");
                 if (!Pickle) instructions.Add("hold pickle");
