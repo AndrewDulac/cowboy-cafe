@@ -8,14 +8,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili
     {
-        private bool cheese = true;
+        private bool cheese = true;  //uses setter in Cheese property to set status of cheese;  This is where the data is actually stored
         /// <summary>
         /// If the chili is topped with cheese
+        /// property for cheese
         /// </summary>
         public bool Cheese
         {
-            get { return cheese; }
-            set { cheese = value; }
+            get { return cheese; } // returns the value stored in cheese variable
+            set { cheese = value; } //sets the value stored in cheese variable
         }
 
         private bool sourCream = true;
@@ -77,14 +78,14 @@ namespace CowboyCafe.Data
         {
             get
             {
-                var instructions = new List<string>();
+                var instructions = new List<string>(); //initialize the list
 
-                if (!cheese) instructions.Add("hold cheese");
+                if (!cheese) instructions.Add("hold cheese");     // if cheese is set to false, add hold cheese to the list
                 if (!sourCream) instructions.Add("hold sour cream");
                 if (!greenOnions) instructions.Add("hold green onions");
                 if (!tortillaStrips) instructions.Add("hold tortilla strips");
 
-                return instructions;
+                return instructions;    //return the list
             }
         }
     }
