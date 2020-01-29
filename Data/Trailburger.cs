@@ -4,52 +4,58 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Trail Burger entree.
+    /// </summary>
     public class TrailBurger
     {
         /// <summary>
-        /// The Price of the Trailburger
+        /// The Price of the Trailburger.
         /// </summary>
         public double Price { get { return 4.50; } }
         /// <summary>
-        /// The amount of calories in the Trailburger
+        /// The amount of calories in the Trailburger.
         /// </summary>
         public uint Calories { get { return 288; } }
         /// <summary>
-        /// Whether or not the Trailburger comes with a bun
+        /// Whether or not the Trailburger comes with a bun.
         /// </summary>
         public bool Bun { get; set; } = true;
         /// <summary>
-        /// Whether or not the Trailburger comes with ketchup
+        /// Whether or not the Trailburger comes with ketchup.
         /// </summary>
         public bool Ketchup { get; set; } = true;
         /// <summary>
-        /// Whether or not the Trailburger comes with mustard
+        /// Whether or not the Trailburger comes with mustard.
         /// </summary>
         public bool Mustard { get; set; } = true;
         /// <summary>
-        /// Whether or not the Trailburger comes with a pickle
+        /// Whether or not the Trailburger comes with a pickle.
         /// </summary>
         public bool Pickle { get; set; } = true;
         /// <summary>
-        /// Whether or not the Trailburger comes with cheese
+        /// Whether or not the Trailburger comes with cheese.
         /// </summary>
         public bool Cheese { get; set; } = true;
         /// <summary>
-        /// Special instructions for the preparation of the Trailburger
+        /// Special instructions for the preparation of the Trailburger.
         /// </summary>
         public List<string> SpecialInstructions
         {
             get
             {
-                var instructions = new List<string>(); //initialize the list
+                var instructions = new List<string>(); 
+                // Initialize the list.
 
-                if (!Bun) instructions.Add("hold bun");     // if item is set to false, add hold item to the list
+                if (!Bun) instructions.Add("hold bun");     
+                // If item is set to false, add hold item to the list.
                 if (!Ketchup) instructions.Add("hold ketchup");
                 if (!Mustard) instructions.Add("hold mustard");
                 if (!Pickle) instructions.Add("hold pickle");
                 if (!Cheese) instructions.Add("hold cheese");
 
-                return instructions;    //return the list
+                return instructions;    
+                // Return the list.
             }
         }
     }

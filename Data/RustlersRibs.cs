@@ -4,11 +4,14 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Rustler's Ribs entree.
+    /// </summary>
     public class RustlersRibs
     {
 
         /// <summary>
-        /// The price of Rustler's Ribs
+        /// The price of Rustler's Ribs.
         /// </summary>
         public double Price
         {
@@ -16,7 +19,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the Rustler's Ribs
+        /// The calories of the Rustler's Ribs.
         /// </summary>
         public uint Calories
         {
@@ -24,15 +27,17 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Special instructions for the preparation of the Rustler's Ribs
+        /// Special instructions for the preparation of the Rustler's Ribs.
         /// </summary>
         public List<string> SpecialInstructions
         {
             get
             {
-                var instructions = new List<string>(); //initialize the list
+                var instructions = new List<string>(); 
+                // Initialize the list.
 
-                return instructions;    //return the list
+                return instructions;    
+                // return the empty list.
             }
         }
     }
