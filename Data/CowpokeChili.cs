@@ -6,7 +6,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree.
     /// </summary>
-    public class CowpokeChili
+    public class CowpokeChili : Entree
     {
         private bool cheese = true;  // Uses setter in Cheese property to set status of cheese;  This is where the data is actually stored.
         /// <summary>
@@ -53,7 +53,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the chili.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -64,7 +64,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the chili.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -75,7 +75,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the chili.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

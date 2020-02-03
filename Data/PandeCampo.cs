@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    public class PandeCampo : Side
+    public class PanDeCampo : Side
     {
         /// <summary>
         /// Gets the price of the side
