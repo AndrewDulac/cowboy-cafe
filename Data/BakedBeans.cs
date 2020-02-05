@@ -4,6 +4,9 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing Baked Beans.
+    /// </summary>
     public class BakedBeans : Side
     {
         /// <summary>

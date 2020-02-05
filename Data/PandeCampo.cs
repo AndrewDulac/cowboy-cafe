@@ -4,6 +4,9 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Pan De Campo Side
+    /// </summary>
     public class PanDeCampo : Side
     {
         /// <summary>
