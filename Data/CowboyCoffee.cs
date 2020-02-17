@@ -54,9 +54,14 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// Whether the drink is sweet or not.
+        /// Whether the drink  has cream or not.
         /// </summary>
         public bool RoomForCream { get; set; } = false;
+
+        /// <summary>
+        /// Whether the drink  has cream or not.
+        /// </summary>
+        public bool Decaf { get; set; } = false;
 
         /// <summary>
         /// Special instructions for the drink.
@@ -68,7 +73,7 @@ namespace CowboyCafe.Data
                 var instructions = new List<string>();
 
                 if (RoomForCream) instructions.Add("Room for Cream");
-                if (Ice) instructions.Add("add ice");
+                if (Ice) instructions.Add("Add Ice");
 
                 return instructions;
             }

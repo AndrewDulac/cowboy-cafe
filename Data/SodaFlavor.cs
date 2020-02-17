@@ -9,10 +9,10 @@ namespace CowboyCafe.Data
     /// </summary>
     public enum SodaFlavor
     {
-        Cream_Soda,
-        Orange_Soda,
-        Sarsaparilla,
-        Birch_Beer,
-        Root_Beer
+        CreamSoda,
+        OrangeSoda,
+        Sarsparilla,
+        BirchBeer,
+        RootBeer
     }
 }

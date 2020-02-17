@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CowboyCafe.Data
 {
-    class JerkedSoda : Drink
+    public class JerkedSoda : Drink
     {
         /// <summary>
         /// Whether Ice is in the Drink or not.
@@ -65,7 +65,7 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!Ice) instructions.Add("hold ice");
+                if (!Ice) instructions.Add("Hold Ice");
 
                 return instructions;
             }
