@@ -50,5 +50,16 @@ namespace CowboyCafe.Data
                 }
             }
         }
+        /// <summary>
+        /// overrides the ToString to give a better description of the object.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(this.Size);
+            sb.Append(" Corn Dodgers");
+            return sb.ToString();
+        }
     }
 }
