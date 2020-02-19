@@ -40,5 +40,13 @@ namespace CowboyCafe.Data
                 // return the empty list.
             }
         }
+        /// <summary>
+        /// Returns name of Object.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Rustler's Ribs";
+        }
     }
 }

@@ -72,5 +72,13 @@ namespace CowboyCafe.Data
                 // Return the list.
             }
         }
+        /// <summary>
+        /// Returns name of Object.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "Dakota Double Burger";
+        }
     }
 }

@@ -19,18 +19,38 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-
         <StackPanel Grid.Row="1">
             <TextBlock TextAlignment="Center">Entree</TextBlock>
-            <Button>Cowpoke Chili</Button>
+            <Button Name ="AddCowpokeChiliButton">Cowpoke Chili</Button>
             <Button Name ="AddTrailBurgerButton">Trail Burger</Button>
-            <Button>Pecos Pulled Pork</Button>
-            <Button>Rustler's Ribs</Button>
-            <Button>Dakota Double Burger</Button>
-            
+            <Button Name ="AddPecosPulledPorkButton">Pecos Pulled Pork</Button>
+            <Button Name ="AddRustlersRibsButton">Rustler's Ribs</Button>
+            <Button Name ="AddDakotaDoubleBurgerButton">Dakota Double Burger</Button>
+            <Button Name ="AddAngryChickenButton">Angry Chicken</Button>
+            <Button Name ="AddTexasTripleBurgerButton">Texas Triple Burger</Button>
         </StackPanel>
+
         <StackPanel Grid.Column="1">
-            <TextBlock>Side</TextBlock>
+            <TextBlock TextAlignment="Center">Side</TextBlock>
+            <Button Name ="AddBakedBeansButton">Baked Beans</Button>
+            <Button Name ="AddChiliCheeseFriesButton">Chili Cheese Fries</Button>
+            <Button Name ="AddCornDodgersButton">Corn Dodgers</Button>
+            <Button Name ="AddPandeCampoButton">Pan de Campo</Button>
         </StackPanel>
+
+        <StackPanel Grid.Column="2">
+            <TextBlock TextAlignment="Center">Drink</TextBlock>
+            <Button Name ="AddJerkedSodaButton">Jerked Soda</Button>
+            <Button Name ="AddCowboyCoffeeButton">Cowboy Coffee</Button>
+            <Button Name ="AddWaterButton">Water</Button>
+            <Button Name ="AddTexasTeaButton">Texas Tea</Button>
+
+        </StackPanel>
+        
+        <StackPanel Grid.Column="3">
+            <TextBlock>Order</TextBlock>
+            <ListView Name="OrderListView"></ListView>
+        </StackPanel>
+        
     </Grid>
 </UserControl>

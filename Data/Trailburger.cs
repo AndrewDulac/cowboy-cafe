@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Trail Burger entree.
     /// </summary>
-    public class TrailBurger : Entree
+    public class Trailburger : Entree
     {
         /// <summary>
         /// The Price of the Trailburger.
@@ -57,6 +57,14 @@ namespace CowboyCafe.Data
                 return instructions;    
                 // Return the list.
             }
+        }
+        /// <summary>
+        /// Returns name of Object.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return "TrailBurger";
         }
     }
 }
