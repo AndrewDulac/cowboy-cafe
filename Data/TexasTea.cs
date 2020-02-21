@@ -79,5 +79,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(this.Size);
+            sb.Append(' ');
+            if (!Sweet) sb.Append("Unsweet ");
+            sb.Append("Texas Tea");
+            return sb.ToString();
+        }
     }
 }
