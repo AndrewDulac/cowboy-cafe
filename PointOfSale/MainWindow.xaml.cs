@@ -22,6 +22,7 @@ namespace PointOfSale
     {
         public MainWindow()
         {
+            ///Initializes and displays the main window.
             InitializeComponent();
         }
     }

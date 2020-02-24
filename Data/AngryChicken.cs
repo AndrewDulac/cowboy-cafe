@@ -42,6 +42,7 @@ namespace CowboyCafe.Data
                 // Return the list.
             }
         }
+
         /// <summary>
         /// Returns name of Object.
         /// </summary>

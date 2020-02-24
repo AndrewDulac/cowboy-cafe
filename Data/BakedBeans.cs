@@ -51,6 +51,10 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Custom ToString override for Object.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

@@ -71,12 +71,33 @@ namespace CowboyCafe.Data
             }
         }
 
+        /// <summary>
+        /// Custom ToString override for Object.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(this.Size);
-            sb.Append(' ');
-            sb.Append(this.Flavor);
+            switch (this.Flavor)
+            {
+                case SodaFlavor.CreamSoda:
+                    sb.Append(" Cream Soda");
+                    break;
+                case SodaFlavor.OrangeSoda:
+                    sb.Append(" Orange Soda");
+                    break;
+                case SodaFlavor.Sarsparilla:
+                    sb.Append(" Sarsparilla");
+                    break;
+                case SodaFlavor.BirchBeer:
+                    sb.Append(" Birch Beer");
+                    break;
+                case SodaFlavor.RootBeer:
+                    sb.Append(" Root Beer");
+                    break;
+            }
+            sb.Append(" Jerked Soda");
             return sb.ToString();
         }
     }

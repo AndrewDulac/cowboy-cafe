@@ -21,7 +21,10 @@ namespace PointOfSale
     {
         public OrderControl()
         {
+            ///Initializes the Control Interface.
             InitializeComponent();
+
+            ///Adds event handlers for each button click.
             AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClicked;
             AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
             AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
@@ -40,64 +43,152 @@ namespace PointOfSale
 
         }
 
-        void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
         {
-            OrderListView.Items.Add(new Trailburger());
+            OrderListView.Items.Add(new TrailBurger());
         }
 
-        void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CowpokeChili());
         }
-        void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new PecosPulledPork());
         }
-        void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new RustlersRibs());
         }
-        void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new DakotaDoubleBurger());
         }
-        void OnAddAngryChickenButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddAngryChickenButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new AngryChicken());
         }
-        void OnAddTexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddTexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new TexasTripleBurger());
         }
-        void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new BakedBeans());
         }
-        void OnAddChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new ChiliCheeseFries());
         }
-        void OnAddCornDodgersButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddCornDodgersButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CornDodgers());
         }
-        void OnAddPandeCampoButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddPandeCampoButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new PanDeCampo());
         }
-        void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new JerkedSoda());
         }
-        void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new CowboyCoffee());
         }
-        void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new Water());
         }
-        void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
+
+        /// <summary>
+        /// Sets the operation for each button click event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
         {
             OrderListView.Items.Add(new TexasTea());
         }

@@ -39,16 +39,33 @@ namespace CowboyCafe.Data
         {
             get
             {
-                switch (this.Size)
+                if (Sweet)
                 {
-                    case Size.Small:
-                        return 5;
-                    case Size.Medium:
-                        return 11;
-                    case Size.Large:
-                        return 18;
-                    default:
-                        throw new NotImplementedException();
+                    switch (this.Size)
+                    {
+                        case Size.Small:
+                            return 10;
+                        case Size.Medium:
+                            return 22;
+                        case Size.Large:
+                            return 36;
+                        default:
+                            throw new NotImplementedException();
+                    }
+                }
+                else
+                {
+                    switch (this.Size)
+                    {
+                        case Size.Small:
+                            return 5;
+                        case Size.Medium:
+                            return 11;
+                        case Size.Large:
+                            return 18;
+                        default:
+                            throw new NotImplementedException();
+                    }
                 }
             }
         }
@@ -79,13 +96,19 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Custom ToString override for Object.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(this.Size);
-            sb.Append(' ');
-            if (!Sweet) sb.Append("Unsweet ");
-            sb.Append("Texas Tea");
+            sb.Append(" Texas");
+            if (!Sweet) sb.Append(" Plain");
+            else { sb.Append(" Sweet"); }
+            sb.Append(" Tea");
             return sb.ToString();
         }
     }

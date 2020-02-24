@@ -50,6 +50,7 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
         /// <summary>
         /// overrides the ToString to give a better description of the object.
         /// </summary>
