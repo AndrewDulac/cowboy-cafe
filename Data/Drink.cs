@@ -7,7 +7,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// Public Drink class object
     /// </summary>
-    public abstract class Drink
+    public abstract class Drink : IOrderItem
     {
         /// <summary>
         /// Enum property to hold the size of the Drink.

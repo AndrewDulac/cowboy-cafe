@@ -10,28 +10,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CowboyCafe.Data;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for UserControl.xaml
+    /// Interaction logic for OrderSummaryControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class OrderSummaryControl : UserControl
     {
-        public OrderControl()
+        public OrderSummaryControl()
         {
             InitializeComponent();
-            var data = new Order();
-            DataContext = data;
         }
-
-        /*
-        public void SwapScreen(UIElement element)
-        {
-            Container.Child = element;
-        }
-        */
-        
     }
 }
