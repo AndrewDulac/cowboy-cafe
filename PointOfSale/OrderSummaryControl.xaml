@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="425" d:DesignWidth="200">
     <UserControl.Resources>
         <Style TargetType="ListBoxItem">
             <Setter Property="HorizontalContentAlignment" Value ="Stretch"/>
@@ -13,19 +13,37 @@
     </UserControl.Resources>
     <Grid>
         <StackPanel>
-            <TextBlock>Order</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock>Order</TextBlock>
+                <TextBlock  Text="{Binding Path=OrderNumber}" Grid.ColumnSpan="2" Margin="34,0,0,0"/>
+            </Grid>
             <ListBox ItemsSource="{Binding Path=Items}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="75"/>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding}"/>
+                            <TextBlock Grid.Column="0" Text="{Binding}"/>
+                            <TextBlock Grid.Column="1" Text="{Binding Path=Items.Price, StringFormat=c}"/>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock>Subtotal</TextBlock>
+            <TextBlock Grid.Column="1"  Text="{Binding Path=Subtotal, StringFormat=c}"/>
+            </Grid>
         </StackPanel>
     </Grid>
+
 </UserControl>
