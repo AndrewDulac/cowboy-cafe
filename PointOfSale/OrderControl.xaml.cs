@@ -22,7 +22,7 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-            var data = new Order();
+            var data = new Order(1);
             DataContext = data;
         }
 
@@ -32,6 +32,37 @@ namespace PointOfSale
             Container.Child = element;
         }
         */
-        
+
+        /// <summary>
+        /// Handler that takes care of completing an order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            Order o = (Order)this.DataContext;
+            this.DataContext = new Order(o.OrderNumber + 1);
+        }
+
+        /// <summary>
+        /// Handler that takes care of canceling an order
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            Order o = (Order)this.DataContext;
+            this.DataContext = new Order(o.OrderNumber + 1);
+        }
+
+        /// <summary>
+        /// I do not know what this is suppose to do yet
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

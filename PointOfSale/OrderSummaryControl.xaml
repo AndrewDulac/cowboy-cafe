@@ -6,44 +6,148 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="425" d:DesignWidth="200">
-    <UserControl.Resources>
-        <Style TargetType="ListBoxItem">
-            <Setter Property="HorizontalContentAlignment" Value ="Stretch"/>
-        </Style>
-    </UserControl.Resources>
     <Grid>
-        <StackPanel>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock>Order</TextBlock>
-                <TextBlock  Text="{Binding Path=OrderNumber}" Grid.ColumnSpan="2" Margin="34,0,0,0"/>
-            </Grid>
-            <ListBox ItemsSource="{Binding Path=Items}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="OrderTextBlock" 
+                   Grid.Column="0" 
+                   Text="Cowboy Cafe"
+                   VerticalAlignment="Center"/>
+            <TextBlock x:Name="OrderNumberTextBlock" 
+                   Grid.Column="1" 
+                   Text="Order #: "
+                   VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="OrderNumberBindingBlock"
+                   Grid.Column="1"
+                   Text="{Binding Path=OrderNumber}"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"/>
+        </Grid>
+
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <!--This list box holds the items currently on the order-->
+            <ListBox x:Name="OrderListView"
+                  Grid.Column="0"
+                  ItemsSource="{Binding Path=Items}">
+
+                <!--This is where you define what each item should look like-->
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="350"/>
-                                <ColumnDefinition Width="75"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Text="{Binding}"/>
-                            <TextBlock Grid.Column="1" Text="{Binding Path=Items.Price, StringFormat=c}"/>
+                            <!--I break the items into two sections. 
+                                The item name is row one
+                                The items special instructions are row two-->
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <!--Build what the item is suppose to look like-->
+                            <Grid Grid.Row="0">
+                                <TextBlock Text="{Binding}" 
+                                   HorizontalAlignment="Left" 
+                                   TextAlignment="Center"
+                                   Margin="0 0 10 0"/>
+                            </Grid>
+
+                            <!--Build what the special instruction items are suppose to look like-->
+                            <Grid Grid.Row="1">
+
+                                <!--Define the columns needed for the second row-->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="25"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!--Listview that will hold the special instructions-->
+                                <ListBox x:Name="OrderListView"
+                                    Width="95"
+                                    HorizontalAlignment="Left"
+                                    Grid.Column="0"
+                                    ItemsSource="{Binding Path=SpecialInstructions}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding}" 
+                                                    HorizontalAlignment="Left" 
+                                                    TextAlignment="Center"/>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+
+                                <!--This button is included in every item and will process the removing of an item-->
+                                <Button x:Name="DeleteItemButton" 
+                                        Click="DeleteItemButton_Click" 
+                                        Background="Red" 
+                                        Content="X" 
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                        FontSize="15" 
+                                        Foreground="Black" 
+                                        HorizontalAlignment="Right" 
+                                        Height="25"
+                                        Width="25" 
+                                        Grid.Column="1"/>
+                            </Grid>
                         </Grid>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <TextBlock>Subtotal</TextBlock>
-            <TextBlock Grid.Column="1"  Text="{Binding Path=Subtotal, StringFormat=c}"/>
-            </Grid>
-        </StackPanel>
-    </Grid>
 
+            <!--We are still in row 1
+                This is where the price list on the rightside comes into play-->
+            <ListBox x:Name="PriceListView"
+                  Grid.Column="1"
+                  ItemsSource="{Binding Path=ItemPrices}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" 
+                                   HorizontalAlignment="Left" 
+                                   TextAlignment="Center"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+        <!--Everything in this grid block only happens in the third row-->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="50"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Placeholder text-->
+            <TextBlock x:Name="SubtotalText"
+                   Grid.Column="0"
+                   Text="Subtotal:"/>
+
+            <!--This is where the subtotal is displayed
+                StringFormat=c formats the string as currency-->
+            <TextBlock x:Name="SubtotalTextBinding"
+                   Grid.Column="1"
+                   Text="{Binding Path=Subtotal, StringFormat=c}"/>
+        </Grid>
+    </Grid>
 </UserControl>

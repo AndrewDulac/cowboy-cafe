@@ -26,23 +26,6 @@ namespace PointOfSale
             ///Initializes the Control Interface.
             InitializeComponent();
 
-            ///Adds event handlers for each button click.
-            AddTrailBurgerButton.Click += OnAddTrailBurgerButtonClicked;
-            AddCowpokeChiliButton.Click += OnAddCowpokeChiliButtonClicked;
-            AddPecosPulledPorkButton.Click += OnAddPecosPulledPorkButtonClicked;
-            AddRustlersRibsButton.Click += OnAddRustlersRibsButtonClicked;
-            AddDakotaDoubleBurgerButton.Click += OnAddDakotaDoubleBurgerButtonClicked;
-            AddAngryChickenButton.Click += OnAddAngryChickenButtonClicked;
-            AddTexasTripleBurgerButton.Click += OnAddTexasTripleBurgerButtonClicked;
-            AddBakedBeansButton.Click += OnAddBakedBeansButtonClicked;
-            AddChiliCheeseFriesButton.Click += OnAddChiliCheeseFriesButtonClicked;
-            AddCornDodgersButton.Click += OnAddCornDodgersButtonClicked;
-            AddPandeCampoButton.Click += OnAddPandeCampoButtonClicked;
-            AddJerkedSodaButton.Click += OnAddJerkedSodaButtonClicked;
-            AddCowboyCoffeeButton.Click += OnAddCowboyCoffeeButtonClicked;
-            AddWaterButton.Click += OnAddWaterButtonClicked;
-            AddTexasTeaButton.Click += OnAddTexasTeaButtonClicked;
-
         }
 
         /*
@@ -66,198 +49,71 @@ namespace PointOfSale
         */
 
         /// <summary>
-        /// Sets the operation for each button click event.
+        /// This method adds entrees to the list by converting the
+        /// sender object to a button and filtering on the name of the button
+        /// that was pressed
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void OnAddTrailBurgerButtonClicked(object sender, RoutedEventArgs e)
+        private void AddItemToList(object sender, RoutedEventArgs e)
         {
-            if(DataContext is Order order)
+            //Ensure the DataContext is an Order and not NULL
+            if (DataContext is Order data)
             {
-                order.Add(new TrailBurger());
-            }
-        }
+                //Cast sender to button
+                Button b = (Button)sender;
 
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddCowpokeChiliButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new CowpokeChili());
-            }
-
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddPecosPulledPorkButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new PecosPulledPork());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddRustlersRibsButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new RustlersRibs());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddDakotaDoubleBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new DakotaDoubleBurger());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddAngryChickenButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new AngryChicken());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddTexasTripleBurgerButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new TexasTripleBurger());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddBakedBeansButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new BakedBeans());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddChiliCheeseFriesButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new ChiliCheeseFries());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddCornDodgersButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new CornDodgers());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddPandeCampoButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new PanDeCampo());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddJerkedSodaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new JerkedSoda());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddCowboyCoffeeButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new CowboyCoffee());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddWaterButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new Water());
-            }
-        }
-
-        /// <summary>
-        /// Sets the operation for each button click event.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OnAddTexasTeaButtonClicked(object sender, RoutedEventArgs e)
-        {
-            if (DataContext is Order order)
-            {
-                order.Add(new TexasTea());
+                //Filter which button was pressed based on name
+                switch (b.Name)
+                {
+                    case "AddAngryChickenButton":
+                        data.Add(new AngryChicken());
+                        break;
+                    case "AddCowpokeChiliButton":
+                        data.Add(new CowpokeChili());
+                        break;
+                    case "AddDakotaDoubleBurgerButton":
+                        data.Add(new DakotaDoubleBurger());
+                        break;
+                    case "AddPecosPulledPorkButton":
+                        data.Add(new PecosPulledPork());
+                        break;
+                    case "AddRustlersRibsButton":
+                        data.Add(new RustlersRibs());
+                        break;
+                    case "AddTexasTripleBurgerButton":
+                        data.Add(new TexasTripleBurger());
+                        break;
+                    case "AddTrailBurgerButton":
+                        data.Add(new TrailBurger());
+                        break;
+                    case "AddBakedBeansButton":
+                        data.Add(new BakedBeans());
+                        break;
+                    case "AddChiliCheeseFriesButton":
+                        data.Add(new ChiliCheeseFries());
+                        break;
+                    case "AddCornDodgersButton":
+                        data.Add(new CornDodgers());
+                        break;
+                    case "AddPandeCampoButton":
+                        data.Add(new PanDeCampo());
+                        break;
+                    case "AddCowboyCoffeeButton":
+                        data.Add(new CowboyCoffee());
+                        break;
+                    case "AddJerkedSodaButton":
+                        data.Add(new JerkedSoda());
+                        break;
+                    case "AddTexasTeaButton":
+                        data.Add(new TexasTea());
+                        break;
+                    case "AddWaterButton":
+                        data.Add(new Water());
+                        break;
+                    default:
+                        throw new NotImplementedException("Unknown button clicked");
+                }
             }
         }
 
