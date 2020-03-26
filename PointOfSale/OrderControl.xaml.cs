@@ -16,6 +16,7 @@ namespace PointOfSale
 {
     /// <summary>
     /// Interaction logic for UserControl.xaml
+    /// Order number implementation taken from Zachery Brunner.
     /// </summary>
     public partial class OrderControl : UserControl
     {
@@ -27,6 +28,7 @@ namespace PointOfSale
         }
 
         /*
+         * 
         public void SwapScreen(UIElement element)
         {
             Container.Child = element;
@@ -62,7 +64,12 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ItemSelectionButton_Click(object sender, RoutedEventArgs e)
         {
+            Container.Child = new MenuItemSelectionControl();
+        }
 
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
         }
     }
 }

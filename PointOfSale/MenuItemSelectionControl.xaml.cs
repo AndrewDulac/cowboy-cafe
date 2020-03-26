@@ -12,11 +12,13 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
 using CowboyCafe.Extensions;
+using PointOfSale.CustomizationScreens;
 
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    /// Interaction logic for OrderControl.xaml 
+    /// Aspects of Zachery Brunner's cowboy cafe solution were used to complete this class.
     /// </summary>
     public partial class MenuItemSelectionControl : UserControl
     {
@@ -27,26 +29,6 @@ namespace PointOfSale
             InitializeComponent();
 
         }
-
-        /*
-        public void OnItemAddButtonClickeD(object sender, RoutedEventArgs e) 
-        {
-            var orderControl = this.FindAncestor<OrderCtontrol>();
-            if(DataContext is Order order)
-            {
-                if(sender is Button button) 
-                {
-                    switch (button.Tag)
-                    {
-                        case "CowpokeChili":
-                            order.Add(new CowpokeChili());
-                            orderControl.SwapScreen(new CustomizeCowpokeChili());
-                            break;
-                    }
-                }
-            }
-        }
-        */
 
         /// <summary>
         /// This method adds entrees to the list by converting the
@@ -60,62 +42,81 @@ namespace PointOfSale
             //Ensure the DataContext is an Order and not NULL
             if (DataContext is Order data)
             {
-                //Cast sender to button
-                Button b = (Button)sender;
-
-                //Filter which button was pressed based on name
-                switch (b.Name)
+                if (sender is Button)
                 {
-                    case "AddAngryChickenButton":
-                        data.Add(new AngryChicken());
-                        break;
-                    case "AddCowpokeChiliButton":
-                        data.Add(new CowpokeChili());
-                        break;
-                    case "AddDakotaDoubleBurgerButton":
-                        data.Add(new DakotaDoubleBurger());
-                        break;
-                    case "AddPecosPulledPorkButton":
-                        data.Add(new PecosPulledPork());
-                        break;
-                    case "AddRustlersRibsButton":
-                        data.Add(new RustlersRibs());
-                        break;
-                    case "AddTexasTripleBurgerButton":
-                        data.Add(new TexasTripleBurger());
-                        break;
-                    case "AddTrailBurgerButton":
-                        data.Add(new TrailBurger());
-                        break;
-                    case "AddBakedBeansButton":
-                        data.Add(new BakedBeans());
-                        break;
-                    case "AddChiliCheeseFriesButton":
-                        data.Add(new ChiliCheeseFries());
-                        break;
-                    case "AddCornDodgersButton":
-                        data.Add(new CornDodgers());
-                        break;
-                    case "AddPandeCampoButton":
-                        data.Add(new PanDeCampo());
-                        break;
-                    case "AddCowboyCoffeeButton":
-                        data.Add(new CowboyCoffee());
-                        break;
-                    case "AddJerkedSodaButton":
-                        data.Add(new JerkedSoda());
-                        break;
-                    case "AddTexasTeaButton":
-                        data.Add(new TexasTea());
-                        break;
-                    case "AddWaterButton":
-                        data.Add(new Water());
-                        break;
-                    default:
-                        throw new NotImplementedException("Unknown button clicked");
+                    IOrderItem item;
+                    FrameworkElement screen = null;
+                    var orderControl = this.FindAncestor<OrderControl>();
+
+                    //Cast sender to button
+                    Button b = (Button)sender;
+
+                    //Filter which button was pressed based on name
+                    switch (b.Name)
+                    {
+                        case "AddAngryChickenButton":
+                            item = new AngryChicken();
+                            screen = new AngryChickenCustomization(DataContext);
+                            break;
+                        case "AddCowpokeChiliButton":
+                            item = new CowpokeChili();
+                            screen = new CowpokeChiliCustomization(DataContext);
+                            break;
+                        case "AddDakotaDoubleBurgerButton":
+                            item = new DakotaDoubleBurger();
+                            screen = new DakotaDoubleCustomization(DataContext);
+                            break;
+                        case "AddPecosPulledPorkButton":
+                            item = new PecosPulledPork();
+                            screen = new PecosPulledPorkCustomization(DataContext);
+                            break;
+                        case "AddRustlersRibsButton":
+                            item = new RustlersRibs();
+                            break;
+                        case "AddTexasTripleBurgerButton":
+                            item = new TexasTripleBurger();
+                            screen = new TexasTripleCustomization(DataContext);
+                            break;
+                        case "AddTrailBurgerButton":
+                            item = new TrailBurger();
+                            screen = new TrailBurgerCustomization(DataContext);
+                            break;
+                        case "AddBakedBeansButton":
+                            item = new BakedBeans();
+                            break;
+                        case "AddChiliCheeseFriesButton":
+                            item = new ChiliCheeseFries();
+                            break;
+                        case "AddCornDodgersButton":
+                            item = new CornDodgers();
+                            break;
+                        case "AddPandeCampoButton":
+                            item = new PanDeCampo();
+                            break;
+                        case "AddCowboyCoffeeButton":
+                            item = new CowboyCoffee();
+                            screen = new CowboyCoffeeCustomization(DataContext);
+                            break;
+                        case "AddJerkedSodaButton":
+                            item = new JerkedSoda();
+                            screen = new JerkedSodaCustomization(DataContext);
+                            break;
+                        case "AddTexasTeaButton":
+                            item = new TexasTea();
+                            screen = new TexasTeaCustomization(DataContext);
+                            break;
+                        case "AddWaterButton":
+                            item = new Water();
+                            screen = new WaterCustomization(DataContext);
+                            break;
+                        default:
+                            throw new NotImplementedException("Unknown button clicked");
+                    }
+                    if (screen != null) screen.DataContext = item;
+                    data.Add(item);
+                    orderControl?.SwapScreen(screen);
                 }
             }
         }
-
     }
 }

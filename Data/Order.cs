@@ -7,6 +7,7 @@ namespace CowboyCafe.Data
 {
     /// <summary>
     /// An order class which holds data summarizing specific details of an Order.
+    /// InvokePropertyChanged method taken from Zachery Brunner's Cowboy Cafe solution
     /// </summary>
     public class Order : INotifyPropertyChanged
     {
@@ -72,9 +73,7 @@ namespace CowboyCafe.Data
             string priceOfItem = String.Format("{0:C}", OrderItem.Price);
             itemPrices.Add(priceOfItem);
             Subtotal += OrderItem.Price;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemPrices"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            InvokePropertyChanged();
         }
 
         public void Remove(IOrderItem OrderItem)
@@ -83,9 +82,15 @@ namespace CowboyCafe.Data
             string priceOfItem = String.Format("{0:C}", OrderItem.Price);
             itemPrices.Remove(priceOfItem);
             Subtotal -= OrderItem.Price;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemPrices"));
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            InvokePropertyChanged();
+        }
+        public void InvokePropertyChanged()
+        {
+            /* Invoke all events to ensure you don't miss anything */
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ItemPrices"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
         }
     }
 }
