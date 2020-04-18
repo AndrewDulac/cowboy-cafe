@@ -51,7 +51,7 @@
             <!--This list box holds the items currently on the order-->
             <ListBox x:Name="OrderListView"
                   Grid.Column="0"
-                  ItemsSource="{Binding Path=Items}">
+                  ItemsSource="{Binding Path=Items}" SelectionChanged="OrderListView_SelectionChanged">
 
                 <!--This is where you define what each item should look like-->
                 <ListBox.ItemTemplate>
@@ -68,6 +68,7 @@
                             <!--Build what the item is suppose to look like-->
                             <Grid Grid.Row="0">
                                 <TextBlock Text="{Binding}" 
+                                   Selector.Selected="OrderListView_Selected"
                                    HorizontalAlignment="Left" 
                                    TextAlignment="Center"
                                    Margin="0 0 10 0"/>

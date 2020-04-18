@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{9CFA20D9-75A1-4F78-B16A-6D84CDAC8BF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{9CFA20D9-75A1-4F78-B16A-6D84CDAC8BF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{00726BB1-EC9A-4646-A85D-04356A013258}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{9CFA20D9-75A1-4F78-B16A-6D84CDAC8BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CFA20D9-75A1-4F78-B16A-6D84CDAC8BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CFA20D9-75A1-4F78-B16A-6D84CDAC8BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00726BB1-EC9A-4646-A85D-04356A013258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00726BB1-EC9A-4646-A85D-04356A013258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00726BB1-EC9A-4646-A85D-04356A013258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00726BB1-EC9A-4646-A85D-04356A013258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

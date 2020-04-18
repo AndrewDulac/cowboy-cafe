@@ -27,6 +27,7 @@ namespace PointOfSale
         {
             ///Initializes the Control Interface.
             InitializeComponent();
+           
 
         }
 
